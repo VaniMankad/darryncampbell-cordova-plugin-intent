@@ -14,10 +14,10 @@
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
-		 <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+		 <config-file target="AndroidManifest.xml" parent="/manifest/application/activity" android:exported="true">
             <intent-filter>
 				<action android:name="com.zebra.cordovademo.ACTION" />
-                    <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
+                <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
                 <action android:name="com.darryncampbell.cordova.plugin.intent.ACTION" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -38,12 +38,7 @@
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/provider_paths"/>
             </provider>
-			<receiver android:name="com.darryncampbell.cordova.plugin.intent.IntentShim" android:exported="true">
-            </receiver>
         </config-file>
-		 
-         
-  
         <source-file src="src/android/IntentShim.java" target-dir="src/com/darryncampbell/plugin/intent" />
         <source-file src="src/android/CordovaPluginIntentFileProvider.java" target-dir="src/com/darryncampbell/plugin/intent" />
 		<resource-file src="src/android/res/xml/provider_paths.xml" target="res/xml/provider_paths.xml"/>
