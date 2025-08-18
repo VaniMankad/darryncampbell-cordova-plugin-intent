@@ -20,6 +20,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </config-file>
+		 <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application>
+            <receiver android:name="au.com.bytecode.intent.IntentShim" android:exported="true">
+                <intent-filter>
+                    <action android:name="com.zebra.cordovademo.ACTION" />
+                    <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </receiver>
+        </application>
+    </edit-config>
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         </config-file>
