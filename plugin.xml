@@ -14,6 +14,14 @@
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
+		 <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            <intent-filter>
+				<action android:name="com.zebra.cordovademo.ACTION" />
+                    <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
+                <action android:name="com.darryncampbell.cordova.plugin.intent.ACTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         </config-file>
@@ -30,18 +38,12 @@
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/provider_paths"/>
             </provider>
-        </config-file>
-		 <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
-        <application>
-            <receiver android:name="com.darryncampbell.cordova.plugin.intent.IntentShim" android:exported="true">
-                <intent-filter>
-                    <action android:name="com.zebra.cordovademo.ACTION" />
-                    <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
-                    <category android:name="android.intent.category.DEFAULT" />
-                </intent-filter>
+			<receiver android:name="com.darryncampbell.cordova.plugin.intent.IntentShim" android:exported="true">
             </receiver>
-        </application>
-    </edit-config>
+        </config-file>
+		 
+         
+  
         <source-file src="src/android/IntentShim.java" target-dir="src/com/darryncampbell/plugin/intent" />
         <source-file src="src/android/CordovaPluginIntentFileProvider.java" target-dir="src/com/darryncampbell/plugin/intent" />
 		<resource-file src="src/android/res/xml/provider_paths.xml" target="res/xml/provider_paths.xml"/>
