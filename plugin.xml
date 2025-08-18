@@ -14,7 +14,7 @@
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
-		<edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+		<config-file file="AndroidManifest.xml" mode="merge" target="/manifest/application">
         <application>
             <receiver android:name="com.darryncampbell.cordova.plugin.intent.IntentShim" android:exported="true">
                 <intent-filter>
@@ -24,7 +24,7 @@
                 </intent-filter>
             </receiver>
         </application>
-    </edit-config>
+    </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         </config-file>
