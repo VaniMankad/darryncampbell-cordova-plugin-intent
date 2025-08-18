@@ -14,8 +14,6 @@
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
-        </config-file>
 		 <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
         <application>
             <receiver android:name="com.darryncampbell.cordova.plugin.intent.IntentShim" android:exported="true">
