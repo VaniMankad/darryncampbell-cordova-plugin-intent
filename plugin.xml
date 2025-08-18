@@ -15,10 +15,6 @@
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
-            <intent-filter>
-                <action android:name="com.darryncampbell.cordova.plugin.intent.ACTION" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </config-file>
 		 <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
         <application>
@@ -26,6 +22,7 @@
                 <intent-filter>
                     <action android:name="com.zebra.cordovademo.ACTION" />
                     <action android:name="com.symbol.datawedge.api.RESULT_ACTION" />
+					<action android:name="com.darryncampbell.cordova.plugin.intent.ACTION" />
                     <category android:name="android.intent.category.DEFAULT" />
                 </intent-filter>
             </receiver>
